@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\SqlTask\SqlTask\bin\Debug\SqlTask.exe.config
+C:\Users\User\source\repos\SqlTask\SqlTask\bin\Debug\SqlTask.exe
+C:\Users\User\source\repos\SqlTask\SqlTask\bin\Debug\SqlTask.pdb
+C:\Users\User\source\repos\SqlTask\SqlTask\obj\Debug\SqlTask.csprojAssemblyReference.cache
+C:\Users\User\source\repos\SqlTask\SqlTask\obj\Debug\SqlTask.Properties.Resources.resources
+C:\Users\User\source\repos\SqlTask\SqlTask\obj\Debug\SqlTask.csproj.GenerateResource.cache
+C:\Users\User\source\repos\SqlTask\SqlTask\obj\Debug\SqlTask.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SqlTask\SqlTask\obj\Debug\SqlTask.exe
+C:\Users\User\source\repos\SqlTask\SqlTask\obj\Debug\SqlTask.pdb
+C:\Users\User\source\repos\SqlTask\SqlTask\obj\Debug\SqlTask.SqlTaskForm.resources
