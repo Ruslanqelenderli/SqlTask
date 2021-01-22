@@ -1,4 +1,5 @@
 ﻿using SqlTask.DAL;
+using SqlTask.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,24 @@ namespace SqlTask
         public SqlTaskForm()
         {
             InitializeComponent();
+            GetAllProductsGrid();
+        }
+        private void GetAllProducts()
+        {
+            using (Database db = new Database("myTask"))
+            {
+                var products = db.GetAllProducts();
+                dgv_Products.DataSource = products;
+            }
+        }
+
+        private void GetAllProductsGrid()
+        {
+            using (Database db = new Database("myTask"))
+            {
+                var gridModels = db.GetGrid();
+                dgv_Products.DataSource = gridModels;
+            }
         }
 
         private void btn_Select_Click(object sender, EventArgs e)
@@ -35,9 +54,20 @@ namespace SqlTask
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
-
+            using(Database database=new Database("myTask"))
+            {
+                database.CreateProduct( new Product
+                {
+                    Name = txb_Name.Text,
+                    Price=Convert.ToInt32(txb_Price.Text),
+                   
+                    
+                });
+            }
+            MessageBox.Show("Product added.");
+            GetAllProducts();
             #region simple
-           string connectionString = ConfigurationManager.ConnectionStrings["myTask"].ConnectionString;
+           /*string connectionString = ConfigurationManager.ConnectionStrings["myTask"].ConnectionString;
             string query = "INSERT INTO SqlTask(Name,Price) VALUES ('" + txb_Name.Text + "', " + txb_Price.Text + ")";
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
@@ -47,7 +77,7 @@ namespace SqlTask
             int affectedRows = sqlCommand.ExecuteNonQuery();
             MessageBox.Show("Sisteme elave olundu");
             }
-            }
+            }*/
            
             #endregion
 
@@ -55,8 +85,20 @@ namespace SqlTask
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            using(Database database=new Database("myTask"))
+            {
+                Product product = new Product()
+                {
+                    Id = Convert.ToInt32(dgv_Products.CurrentRow.Cells[0].Value),
+
+                    Name = txb_NameUpdate.Text,
+                    Price = Convert.ToInt32(txb_PriceUpdate.Text)
+                };
+                database.Update(product);
+            }
+            GetAllProducts();
             #region simple
-            string connectionString = ConfigurationManager.ConnectionStrings["myTask"].ConnectionString;
+           /* string connectionString = ConfigurationManager.ConnectionStrings["myTask"].ConnectionString;
             string query = "UPDATE SqlTask SET Name='" + txb_Name.Text + "'  WHERE Id=" + txb_Id.Text + "";
 
 
@@ -71,28 +113,28 @@ namespace SqlTask
             MessageBox.Show("Ada duzelis edildi.");
             }
 
-            }
+            }*/
             #endregion
+        }
+
+        private void dgv_Products_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txb_NameUpdate.Text = dgv_Products.CurrentRow.Cells[1].Value.ToString();
+            txb_PriceUpdate.Text = dgv_Products.CurrentRow.Cells[2].Value.ToString();
+
+
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["myTask"].ConnectionString;
-            string query = "DELETE FROM SqlTask WHERE Id="+txb_Id.Text+"";
-
-
-
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            int id = Convert.ToInt32(dgv_Products.CurrentRow.Cells[0].Value);
+            using(Database database=new Database("myTask"))
             {
-                sqlConnection.Open();
-
-                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
-                {
-                    int affectedRows1 = sqlCommand.ExecuteNonQuery();
-                    MessageBox.Show("Qeyd etdiyiniz id silindi");
-                }
-
+                
+                database.Delete(id);
+                GetAllProducts();
             }
+           
         }
     }
 }

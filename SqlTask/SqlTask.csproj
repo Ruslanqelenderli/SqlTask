@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DAL\Database.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductGridModel.cs" />
     <Compile Include="SqlTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>

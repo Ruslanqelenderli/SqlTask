@@ -39,12 +39,20 @@
             this.txb_Price = new System.Windows.Forms.TextBox();
             this.txb_Name = new System.Windows.Forms.TextBox();
             this.rtxb_Task = new System.Windows.Forms.RichTextBox();
+            this.lbl_PriceUpdate = new System.Windows.Forms.Label();
+            this.lbl_NameUpdate = new System.Windows.Forms.Label();
+            this.txb_PriceUpdate = new System.Windows.Forms.TextBox();
+            this.txb_NameUpdate = new System.Windows.Forms.TextBox();
+            this.txb_CategoryId = new System.Windows.Forms.TextBox();
+            this.lbl_CategoryId = new System.Windows.Forms.Label();
+            this.dgv_Products = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Products)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
-            this.lbl_Id.Location = new System.Drawing.Point(36, 24);
+            this.lbl_Id.Location = new System.Drawing.Point(36, 9);
             this.lbl_Id.Name = "lbl_Id";
             this.lbl_Id.Size = new System.Drawing.Size(16, 13);
             this.lbl_Id.TabIndex = 0;
@@ -53,7 +61,7 @@
             // label_Price
             // 
             this.label_Price.AutoSize = true;
-            this.label_Price.Location = new System.Drawing.Point(36, 148);
+            this.label_Price.Location = new System.Drawing.Point(36, 87);
             this.label_Price.Name = "label_Price";
             this.label_Price.Size = new System.Drawing.Size(31, 13);
             this.label_Price.TabIndex = 1;
@@ -62,7 +70,7 @@
             // lbl_Name
             // 
             this.lbl_Name.AutoSize = true;
-            this.lbl_Name.Location = new System.Drawing.Point(36, 86);
+            this.lbl_Name.Location = new System.Drawing.Point(36, 48);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(35, 13);
             this.lbl_Name.TabIndex = 2;
@@ -70,7 +78,7 @@
             // 
             // btn_Select
             // 
-            this.btn_Select.Location = new System.Drawing.Point(39, 213);
+            this.btn_Select.Location = new System.Drawing.Point(12, 213);
             this.btn_Select.Name = "btn_Select";
             this.btn_Select.Size = new System.Drawing.Size(75, 42);
             this.btn_Select.TabIndex = 3;
@@ -80,9 +88,9 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(244, 213);
+            this.btn_Update.Location = new System.Drawing.Point(579, 142);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(75, 42);
+            this.btn_Update.Size = new System.Drawing.Size(61, 42);
             this.btn_Update.TabIndex = 4;
             this.btn_Update.Text = "Update";
             this.btn_Update.UseVisualStyleBackColor = true;
@@ -90,9 +98,9 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(345, 213);
+            this.btn_Delete.Location = new System.Drawing.Point(385, 14);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(75, 42);
+            this.btn_Delete.Size = new System.Drawing.Size(75, 20);
             this.btn_Delete.TabIndex = 5;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -100,7 +108,7 @@
             // 
             // btn_Create
             // 
-            this.btn_Create.Location = new System.Drawing.Point(144, 213);
+            this.btn_Create.Location = new System.Drawing.Point(93, 213);
             this.btn_Create.Name = "btn_Create";
             this.btn_Create.Size = new System.Drawing.Size(75, 42);
             this.btn_Create.TabIndex = 6;
@@ -110,38 +118,103 @@
             // 
             // txb_Id
             // 
-            this.txb_Id.Location = new System.Drawing.Point(39, 40);
+            this.txb_Id.Location = new System.Drawing.Point(39, 25);
             this.txb_Id.Name = "txb_Id";
             this.txb_Id.Size = new System.Drawing.Size(100, 20);
             this.txb_Id.TabIndex = 7;
             // 
             // txb_Price
             // 
-            this.txb_Price.Location = new System.Drawing.Point(39, 164);
+            this.txb_Price.Location = new System.Drawing.Point(39, 103);
             this.txb_Price.Name = "txb_Price";
             this.txb_Price.Size = new System.Drawing.Size(100, 20);
             this.txb_Price.TabIndex = 8;
             // 
             // txb_Name
             // 
-            this.txb_Name.Location = new System.Drawing.Point(39, 102);
+            this.txb_Name.Location = new System.Drawing.Point(39, 64);
             this.txb_Name.Name = "txb_Name";
             this.txb_Name.Size = new System.Drawing.Size(100, 20);
             this.txb_Name.TabIndex = 9;
             // 
             // rtxb_Task
             // 
-            this.rtxb_Task.Location = new System.Drawing.Point(212, 40);
+            this.rtxb_Task.Location = new System.Drawing.Point(766, 6);
             this.rtxb_Task.Name = "rtxb_Task";
             this.rtxb_Task.Size = new System.Drawing.Size(176, 144);
             this.rtxb_Task.TabIndex = 10;
             this.rtxb_Task.Text = "";
             // 
+            // lbl_PriceUpdate
+            // 
+            this.lbl_PriceUpdate.AutoSize = true;
+            this.lbl_PriceUpdate.Location = new System.Drawing.Point(556, 86);
+            this.lbl_PriceUpdate.Name = "lbl_PriceUpdate";
+            this.lbl_PriceUpdate.Size = new System.Drawing.Size(31, 13);
+            this.lbl_PriceUpdate.TabIndex = 12;
+            this.lbl_PriceUpdate.Text = "Price";
+            // 
+            // lbl_NameUpdate
+            // 
+            this.lbl_NameUpdate.AutoSize = true;
+            this.lbl_NameUpdate.Location = new System.Drawing.Point(556, 40);
+            this.lbl_NameUpdate.Name = "lbl_NameUpdate";
+            this.lbl_NameUpdate.Size = new System.Drawing.Size(35, 13);
+            this.lbl_NameUpdate.TabIndex = 13;
+            this.lbl_NameUpdate.Text = "Name";
+            // 
+            // txb_PriceUpdate
+            // 
+            this.txb_PriceUpdate.Location = new System.Drawing.Point(559, 102);
+            this.txb_PriceUpdate.Name = "txb_PriceUpdate";
+            this.txb_PriceUpdate.Size = new System.Drawing.Size(100, 20);
+            this.txb_PriceUpdate.TabIndex = 14;
+            // 
+            // txb_NameUpdate
+            // 
+            this.txb_NameUpdate.Location = new System.Drawing.Point(559, 56);
+            this.txb_NameUpdate.Name = "txb_NameUpdate";
+            this.txb_NameUpdate.Size = new System.Drawing.Size(100, 20);
+            this.txb_NameUpdate.TabIndex = 15;
+            // 
+            // txb_CategoryId
+            // 
+            this.txb_CategoryId.Location = new System.Drawing.Point(39, 142);
+            this.txb_CategoryId.Name = "txb_CategoryId";
+            this.txb_CategoryId.Size = new System.Drawing.Size(100, 20);
+            this.txb_CategoryId.TabIndex = 16;
+            // 
+            // lbl_CategoryId
+            // 
+            this.lbl_CategoryId.AutoSize = true;
+            this.lbl_CategoryId.Location = new System.Drawing.Point(36, 126);
+            this.lbl_CategoryId.Name = "lbl_CategoryId";
+            this.lbl_CategoryId.Size = new System.Drawing.Size(61, 13);
+            this.lbl_CategoryId.TabIndex = 17;
+            this.lbl_CategoryId.Text = "Category Id";
+            // 
+            // dgv_Products
+            // 
+            this.dgv_Products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Products.Location = new System.Drawing.Point(189, 40);
+            this.dgv_Products.Name = "dgv_Products";
+            this.dgv_Products.Size = new System.Drawing.Size(271, 122);
+            this.dgv_Products.TabIndex = 18;
+            this.dgv_Products.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Products_CellClick);
+            // 
             // SqlTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 277);
+            this.ClientSize = new System.Drawing.Size(955, 277);
+            this.Controls.Add(this.dgv_Products);
+            this.Controls.Add(this.lbl_CategoryId);
+            this.Controls.Add(this.txb_CategoryId);
+            this.Controls.Add(this.txb_NameUpdate);
+            this.Controls.Add(this.txb_PriceUpdate);
+            this.Controls.Add(this.lbl_NameUpdate);
+            this.Controls.Add(this.lbl_PriceUpdate);
             this.Controls.Add(this.rtxb_Task);
             this.Controls.Add(this.txb_Name);
             this.Controls.Add(this.txb_Price);
@@ -155,6 +228,7 @@
             this.Controls.Add(this.lbl_Id);
             this.Name = "SqlTaskForm";
             this.Text = "Task";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Products)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,6 +247,13 @@
         public System.Windows.Forms.TextBox txb_Price;
         public System.Windows.Forms.TextBox txb_Name;
         public System.Windows.Forms.RichTextBox rtxb_Task;
+        private System.Windows.Forms.Label lbl_PriceUpdate;
+        private System.Windows.Forms.Label lbl_NameUpdate;
+        public System.Windows.Forms.TextBox txb_PriceUpdate;
+        public System.Windows.Forms.TextBox txb_NameUpdate;
+        public System.Windows.Forms.TextBox txb_CategoryId;
+        private System.Windows.Forms.Label lbl_CategoryId;
+        private System.Windows.Forms.DataGridView dgv_Products;
     }
 }
 
